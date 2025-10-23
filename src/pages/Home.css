@@ -25,6 +25,8 @@
 
 .header-right {
   display: flex;
+  position: relative;
+  right: 30px;
   align-items: center;
   justify-content: center;
 }
