@@ -1,0 +1,53 @@
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Menú lateral */
+.sidebar {
+  position: fixed;
+  top: 60px; /* altura del header */
+  left: 0;
+  width: 220px;
+  height: calc(100% - 60px);
+  background-color: #d32f2f; /* tono rojizo */
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Links del menú */
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #b71c1c;
+}
+
+
+/* Responsivo (para móviles) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    position: absolute;
+    left: -220px;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+}

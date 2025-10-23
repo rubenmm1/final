@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" width="90" height="90">
+  <!-- Círculo exterior centrado -->
+  <circle cx="45" cy="45" r="40" fill="#ffffff" stroke="#b30000" stroke-width="4"/>
+
+  <!-- Estrella del portero, adaptada y centrada -->
+  <path d="M45 15 L53 35 L73 35 L57 49 L63 69 L45 57 L27 69 L33 49 L17 35 L37 35 Z"
+        fill="#b30000"/>
+
+  <!-- Balón central -->
+  <circle cx="45" cy="45" r="8" fill="#ffffff" stroke="#b30000" stroke-width="2"/>
+</svg>
