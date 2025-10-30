@@ -1,60 +1,88 @@
+/* ============================
+   HEADER ESTILO LALIGA
+   ============================ */
+
 .header {
-  background: linear-gradient(135deg, #1e1e28 0%, #2a2a3a 100%);
-  background-color: #1e1e28; /* Fallback sólido */
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box;
+  height: 60px;
+  background-color: #b30000; /* rojo oscuro estilo LaLiga */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid #00C890;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
 }
 
-/* Título del header */
+/* Contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Imagen del logo */
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Título (opcional, si quieres mantener el nombre FutApp) */
 .title {
-  font-size: 1.5rem;
-  color: #00C890;
+  font-size: 1.4rem;
+  color: white;
   margin: 0;
-  font-weight: 700;
 }
 
 /* Navegación */
 .nav {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 2rem;
 }
 
-/* Enlaces de navegación */
+/* Enlaces del menú */
 .navLink {
-  color: #F0F0F0;
+  color: white;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
 .navLink:hover {
-  color: #00C890;
-  text-decoration: underline;
+  color: #ffeaea; /* tono claro al pasar el ratón */
+  border-bottom: 2px solid white;
 }
 
-/* Botón */
-.button {
-  background-color: #00C890;
-  color: #1E1E28;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
+/* Versión responsive */
+@media (max-width: 600px) {
+  .header {
+    padding: 0 10px;
+  }
 
-.button:hover {
-  background-color: #00A878;
+  .nav {
+    gap: 1rem;
+  }
+
+  .title {
+    display: none; /* ocultamos el texto si el espacio es pequeño */
+  }
 }
