@@ -41,3 +41,29 @@
 .app-logo:hover {
   transform: scale(1.1) rotate(5deg);
 }
+
+#contenido {
+  margin-top: 60px; /* evita que quede detrás del header */
+  margin-left: 220px; /* evita que quede detrás del sidebar */
+  padding: 20px;
+  background-color: #ffffff;
+  min-height: calc(100vh - 60px); /* ocupa el espacio visible sin el header */
+  box-sizing: border-box;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  transition: margin-left 0.3s ease;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 768px) {
+  #contenido {
+    margin-left: 180px; /* sidebar más angosto */
+  }
+}
+
+@media (max-width: 600px) {
+  #contenido {
+    margin-left: 0; /* sidebar oculto por defecto en móvil */
+  }
+}

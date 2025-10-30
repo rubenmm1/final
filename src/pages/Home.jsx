@@ -7,15 +7,15 @@ function Home() {
         <>
         <header className="main-header">
             <div className="header-left">
-                ⚽ Mi App de Fútbol
+                ⚽ FUTAPP
             </div>
             <div className="header-right">
                 <img src={logo} alt="Logo de la app" className="app-logo" />
             </div>
         </header>
             <Aside />
-            <div>
-                
+            <div id="contenido">
+                BIENVENIDO A FUTAPP, LA APLICACIÓN CON TODOS LOS RESULTADOS Y CLASIFICACIONES DE LAS GRANDES COMPETICIONES DE EUROPA
             </div>
         </>
        
