@@ -1,0 +1,77 @@
+.resultados-page {
+  position: relative;
+  top: 60px; /* respeta el header */
+  left: 220px; /* respeta el aside */
+  width: calc(100vw - 220px);
+  height: calc(100vh - 60px);
+  background: linear-gradient(135deg, #1b1b1b, #3b0000);
+  color: white;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto; /* permite hacer scroll si hay muchos partidos */
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.partidos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.partido-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.partido-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.equipos {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.vs {
+  color: #ffcc00;
+  margin: 0 10px;
+}
+
+.hora {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Mensaje de carga */
+.cargando {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ffcc00;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .resultados-page {
+    margin-left: 180px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .resultados-page {
+    margin-left: 0;
+  }
+}
