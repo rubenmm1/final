@@ -1,0 +1,162 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #b30000; /* rojo oscuro estilo LaLiga */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.header-left {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-right {
+  display: flex;
+  position: relative;
+  right: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.app-logo:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+
+
+
+.competiciones-page {
+  position: relative;
+  margin-top: 60px; /* respeta el header */
+  margin-left: 220px; /* respeta el aside */
+  width: calc(100vw - 220px);
+  height: calc(100vh - 60px);
+  padding: 40px;
+  background: linear-gradient(to bottom right, #b30000, #000);
+  color: white;
+  box-sizing: border-box;
+  text-align: center;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.grid-competiciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.tarjeta-competicion {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 220px;
+  background-color: #222;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.tarjeta-competicion:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(255, 204, 0, 0.5);
+}
+
+.tarjeta-fondo {
+  position: absolute;
+  inset: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.tarjeta-competicion:hover .tarjeta-fondo {
+  opacity: 0.4;
+}
+
+.tarjeta-overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  backdrop-filter: brightness(0.8);
+}
+
+.tarjeta-overlay h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.tarjeta-overlay button {
+  background-color: #ffcc00;
+  color: #b30000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.tarjeta-overlay button:hover {
+  background-color: #ffd633;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .competiciones-page {
+    margin-left: 180px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .competiciones-page {
+    margin-left: 0;
+  }
+}
