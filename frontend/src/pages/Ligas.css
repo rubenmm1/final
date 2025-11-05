@@ -1,0 +1,42 @@
+.league-page {
+  position: absolute;
+  top: 60px;
+  left: 220px;
+  width: calc(100vw - 220px);
+  height: calc(100vh - 60px);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("https://images.pexels.com/photos/20559783/pexels-photo-20559783/free-photo-of-campo-hierba-cesped-deporte.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.league-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 50px 60px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  max-width: 700px;
+}
+
+.league-overlay h1 {
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+  color: #ffcc00;
+}
+
+@media (max-width: 600px) {
+  .league-page {
+    left: 0;
+    width: 100vw;
+  }
+}

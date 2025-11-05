@@ -5,6 +5,7 @@ function Aside() {
   return (
     <aside>
       <nav className="sidebar">
+        <Link to="/">Inicio</Link>
         <Link to="/laliga">LaLiga</Link>
         <Link to="/premier-league">Premier League</Link>
         <Link to="/bundesliga">Bundesliga</Link>
