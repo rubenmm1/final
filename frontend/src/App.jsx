@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import Laliga from './pages/Laliga';
 import Premier from './pages/Premier';
 import Competiciones from './pages/Competiciones';
+import Resultados from './pages/Resultados';
 
 function App() {
   return(
@@ -14,6 +15,7 @@ function App() {
       <Route element={<Layout />}>
         <Route path='/laliga' element={<Laliga />}/>
         <Route path='/premier-league' element={<Premier />}/>
+        <Route path='/resultados' element={<Resultados />}/>
       </Route>
     </Routes>
   );

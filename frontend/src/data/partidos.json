@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "local": "Real Madrid",
+    "visitante": "FC Barcelona",
+    "hora": "2025-11-09T21:00:00"
+  },
+  {
+    "id": 2,
+    "local": "Atlético de Madrid",
+    "visitante": "Sevilla FC",
+    "hora": "2025-11-10T18:30:00"
+  },
+  {
+    "id": 3,
+    "local": "Real Sociedad",
+    "visitante": "Villarreal CF",
+    "hora": "2025-11-10T16:15:00"
+  },
+  {
+    "id": 4,
+    "local": "Valencia CF",
+    "visitante": "Real Betis",
+    "hora": "2025-11-11T21:00:00"
+  },
+  {
+    "id": 5,
+    "local": "Athletic Club",
+    "visitante": "Girona FC",
+    "hora": "2025-11-11T18:30:00"
+  },
+  {
+    "id": 6,
+    "local": "Celta de Vigo",
+    "visitante": "Rayo Vallecano",
+    "hora": "2025-11-12T16:15:00"
+  },
+  {
+    "id": 7,
+    "local": "Getafe CF",
+    "visitante": "Deportivo Alavés",
+    "hora": "2025-11-12T14:00:00"
+  },
+  {
+    "id": 8,
+    "local": "CA Osasuna",
+    "visitante": "UD Las Palmas",
+    "hora": "2025-11-13T21:00:00"
+  },
+  {
+    "id": 9,
+    "local": "RCD Mallorca",
+    "visitante": "Cádiz CF",
+    "hora": "2025-11-13T18:30:00"
+  },
+  {
+    "id": 10,
+    "local": "Granada CF",
+    "visitante": "UD Almería",
+    "hora": "2025-11-13T16:15:00"
+  }
+]

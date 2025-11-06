@@ -10,7 +10,7 @@ function Aside() {
         <Link to="/premier-league">Premier League</Link>
         <Link to="/bundesliga">Bundesliga</Link>
         <Link to="/serie-a">Serie A</Link>
-        <Link to="/ligue-1">Ligue 1 (Francesa)</Link>
+        <Link to="/ligue-1">Ligue 1</Link>
         <Link to="/champions-league">Champions League</Link>
         <Link to="/europa-league">Europa League</Link>
       </nav>
