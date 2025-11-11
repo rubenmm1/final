@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "nombre": "Real Madrid",
+    "posicion": 1,
+    "puntos": 31,
+    "goles_favor": 26,
+    "goles_contra": 9
+  },
+  {
+    "id": 2,
+    "nombre": "Girona",
+    "posicion": 2,
+    "puntos": 28,
+    "goles_favor": 25,
+    "goles_contra": 14
+  },
+  {
+    "id": 3,
+    "nombre": "Barcelona",
+    "posicion": 3,
+    "puntos": 27,
+    "goles_favor": 24,
+    "goles_contra": 12
+  },
+  {
+    "id": 4,
+    "nombre": "Atlético de Madrid",
+    "posicion": 4,
+    "puntos": 25,
+    "goles_favor": 23,
+    "goles_contra": 10
+  },
+  {
+    "id": 5,
+    "nombre": "Real Sociedad",
+    "posicion": 5,
+    "puntos": 22,
+    "goles_favor": 18,
+    "goles_contra": 13
+  },
+  {
+    "id": 6,
+    "nombre": "Athletic Club",
+    "posicion": 6,
+    "puntos": 21,
+    "goles_favor": 19,
+    "goles_contra": 14
+  },
+  {
+    "id": 7,
+    "nombre": "Real Betis",
+    "posicion": 7,
+    "puntos": 19,
+    "goles_favor": 15,
+    "goles_contra": 16
+  },
+  {
+    "id": 8,
+    "nombre": "Valencia CF",
+    "posicion": 8,
+    "puntos": 17,
+    "goles_favor": 14,
+    "goles_contra": 17
+  },
+  {
+    "id": 9,
+    "nombre": "Villarreal CF",
+    "posicion": 9,
+    "puntos": 15,
+    "goles_favor": 16,
+    "goles_contra": 20
+  }
+]
