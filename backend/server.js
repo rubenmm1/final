@@ -1,63 +1,72 @@
 import express from 'express';
-
-// fs (File System): Nos permite leer y escribir archivos
 import fs from 'fs';
-
-// path: Nos ayuda a manejar rutas de archivos de forma correcta
 import path from 'path';
-
-// cors: Permite que nuestro frontend se comunique con el backend
 import cors from 'cors';
-
-// fileURLToPath: Necesario para obtener la carpeta actual en módulos ES6
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
 const PUERTO = 3000;
-
-// Crear nuestra aplicación web usando Express
 const app = express();
-
-
-const ARCHIVO_PARTIDOS = path.join(__dirname, 'partidos.json');
-
 
 app.use(cors());
 app.use(express.json());
-
 app.use(express.static(path.join(__dirname, '../frontend')));
 
+// ✅ Ruta de los archivos JSON
+const ARCHIVO_PARTIDOS = path.join(__dirname, '../frontend/src/data/partidos.json');
+const ARCHIVO_EQUIPOS = path.join(__dirname, '../frontend/src/data/equipos.json');
 
+// ==============================
+// FUNCIONES AUXILIARES
+// ==============================
 
+// Leer partidos
 function leerPartidos() {
-    try {
-        // Leer el archivo como texto
-        const contenido = fs.readFileSync("./webfinal/frontend/src/data/partidos.json", 'utf8');
-        
-        // Convertir el texto JSON en un array de JavaScript
-        // Express.json analiza (parsea) el cuerpo de las peticiones HTTP que lleguen desde el cliente (frontend).
-        // Aquí estás leyendo un archivo del disco duro, no una petición del cliente.
-        const partidos = JSON.parse(contenido); //Convierte a objeto
-        
-        console.log(`📖 Se leyeron ${partidos.length} partidos del archivo`);
-        return partidos;
-    } catch (error) {
-        // Si hay un error (archivo no existe, está corrupto, etc.), devolver array vacío
-        console.error('❌ Error al leer partidos:', error.message);
-        return [];
-    }
+  try {
+    const contenido = fs.readFileSync(ARCHIVO_PARTIDOS, 'utf8');
+    const partidos = JSON.parse(contenido);
+    console.log(`📖 Se leyeron ${partidos.length} partidos del archivo`);
+    return partidos;
+  } catch (error) {
+    console.error('❌ Error al leer partidos:', error.message);
+    return [];
+  }
 }
 
+// ✅ Leer equipos
+function leerEquipos() {
+  try {
+    const contenido = fs.readFileSync(ARCHIVO_EQUIPOS, 'utf8');
+    const equipos = JSON.parse(contenido);
+    console.log(`📖 Se leyeron ${equipos.length} equipos del archivo`);
+    return equipos;
+  } catch (error) {
+    console.error('❌ Error al leer equipos:', error.message);
+    return [];
+  }
+}
 
-app.get('/partidos', (peticion, respuesta) => {
-    const partidos=leerPartidos();
-    respuesta.json(partidos); //Convierte a texto plano (JSON)
+// ==============================
+// RUTAS DE LA API
+// ==============================
+
+// Obtener todos los partidos
+app.get('/partidos', (req, res) => {
+  const partidos = leerPartidos();
+  res.json(partidos);
 });
 
+// ✅ Obtener todos los equipos
+app.get('/equipos', (req, res) => {
+  const equipos = leerEquipos();
+  res.json(equipos);
+});
 
-app.listen(PUERTO, ()=>{
-    console.log(`Servidor escuchando en http://localhost:${PUERTO}`);
-})
+// ==============================
+// INICIAR SERVIDOR
+// ==============================
+app.listen(PUERTO, () => {
+  console.log(`🚀 Servidor escuchando en http://localhost:${PUERTO}`);
+});
