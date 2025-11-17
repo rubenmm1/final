@@ -1,10 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import logo from "../assets/logo.svg";
-import Home from "../pages/Home";
 
 const Header = () => {
+  
+  const location = useLocation();
+
+  // Extraemos la liga actual según la ruta:
+  // "/laliga" → "laliga"
+  // "/clasificacion/laliga" → "laliga"
+  // "/resultados/laliga" → "laliga"
+  
+  const ruta = location.pathname.split("/").filter(Boolean);
+  const ligaActual = ruta[0] === "clasificacion" || ruta[0] === "resultados"
+    ? ruta[1]
+    : ruta[0];
+
   return (
     <header className="header">
       <div className="logo-container">
@@ -14,14 +25,17 @@ const Header = () => {
         <h1 className="title">FUTAPP</h1>
       </div>
 
-      <nav className="nav">
-        <Link to="/clasificacion" className="navLink">
-          Clasificación
-        </Link>
-        <Link to="/resultados" className="navLink">
-          Resultados
-        </Link>
-      </nav>
+      {ligaActual && (
+        <nav className="nav">
+          <Link to={`/clasificacion/${ligaActual}`} className="navLink">
+            Clasificación
+          </Link>
+
+          <Link to={`/resultados/${ligaActual}`} className="navLink">
+            Resultados
+          </Link>
+        </nav>
+      )}
     </header>
   );
 };
