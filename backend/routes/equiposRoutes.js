@@ -8,7 +8,11 @@ const route = Router();
 route.get("/", equiposController.listarEquipos);   
    // ?q=&activo=&minPrecio=&maxPrecio=&page=&limit=&sort=
       
-route.get("/:leagueId", equiposController.obtenerEquipos);         // por id
+// route.get("/:leagueId", equiposController.obtenerEquipos);         // por id
+
+
+route.get('/slug/:leagueSlug', equiposController.obtenerEquiposPorSlug);
+
 
 // // CREATE
 // route.post("/", productosController.crearProducto);

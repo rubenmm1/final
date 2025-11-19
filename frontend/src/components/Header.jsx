@@ -3,18 +3,24 @@ import "./Header.css";
 import logo from "../assets/logo.svg";
 
 const Header = () => {
-  
   const location = useLocation();
 
-  // Extraemos la liga actual según la ruta:
-  // "/laliga" → "laliga"
-  // "/clasificacion/laliga" → "laliga"
-  // "/resultados/laliga" → "laliga"
-  
+  // Separar la ruta en segmentos
   const ruta = location.pathname.split("/").filter(Boolean);
-  const ligaActual = ruta[0] === "clasificacion" || ruta[0] === "resultados"
-    ? ruta[1]
-    : ruta[0];
+
+  // Identificar liga según el tipo de ruta
+  // /clasificacion/laliga → laliga
+  // /resultados/laliga → laliga
+  // /laliga → laliga
+  let ligaActual = null;
+
+  if (ruta.length === 1) {
+    // /laliga
+    ligaActual = ruta[0];
+  } else if (ruta.length === 2 && (ruta[0] === "clasificacion" || ruta[0] === "resultados")) {
+    // /clasificacion/laliga o /resultados/laliga
+    ligaActual = ruta[1];
+  }
 
   return (
     <header className="header">

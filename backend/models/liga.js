@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 // Definimos el esquema
 const ligaSchema = new mongoose.Schema({
   nombre: { type: String, required: true, trim: true, index: true }, // índice simple
+  slug: { type: String, required: true, unique: true },
   equipos: { type: Number, required: true, min: 0 }, 
 }, { timestamps: true });
 

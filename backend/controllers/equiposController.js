@@ -1,4 +1,5 @@
 import Equipo from "../models/equipo.js";
+import Liga from "../models/liga.js"
 
 class EquiposController {
 
@@ -6,7 +7,7 @@ class EquiposController {
   async listarEquipos(req, res) {
     try {
       const equipos = await Equipo.find();
-      res.json({ status: 'ok', data: productos });
+      res.json({ status: 'ok', data: equipos });
     } catch (error) {
       console.error(error);
       res.status(500).json({ status: 'error', message: 'Error al listar productos' });
@@ -14,18 +15,69 @@ class EquiposController {
   }
 
   // GET /api/productos/:id - Obtener uno
-  async obtenerEquipos(req, res) {
-    try {
-        const { leagueId } = req.params;
+  // async obtenerEquipos(req, res) {
+  //   try {
+  //     const { leagueId } = req.params;
 
-        const teams = await Team.find({ leagueId }).sort({ position: 1 });
+  //     const teams = await Equipo.find({ liga_id: leagueId }).sort({ posicion: 1 });
 
-        res.json(teams);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ status: 'error', message: 'Error al obtener producto' });
+  //     res.json(teams);
+
+  //   } catch (error) {
+  //     console.error(error);
+  //     res.status(500).json({ status: 'error', message: 'Error al obtener producto' });
+  //   }
+  // }
+
+
+
+
+
+  async obtenerEquiposPorSlug(req, res) {
+  try {
+    const { leagueSlug } = req.params;
+
+    // Buscar la liga usando el slug
+    const liga = await Liga.findOne({ slug: leagueSlug });
+    if (!liga) {
+      return res.status(404).json({ message: 'Liga no encontrada' });
     }
+
+    // Buscar equipos usando el _id de la liga
+    const equipos = await Equipo.find({ liga_id: liga._id }).sort({ posicion: 1 });
+
+    res.json(equipos);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error al obtener equipos' });
   }
+}
+  
+//  async obtenerEquiposPorNombre(req, res) {
+//   try {
+//     const { leagueName } = req.params;
+
+//     console.log(leagueName);
+
+//     // Buscar la liga por su nombre
+//     const liga = await Liga.findOne({ nombre: leagueName });
+//     if (!liga) {
+//       return res.status(404).json({ message: 'Liga no encontrada' });
+//     }
+
+//     // Buscar equipos usando el _id de la liga
+//     const equipos = await Equipo.find({ liga_id: liga._id }).sort({ posicion: 1 });
+
+//     res.json(equipos);
+
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: 'Error al obtener equipos' });
+//   }
+// }
+
+
+
 }
 
 export default new EquiposController();

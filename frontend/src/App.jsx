@@ -27,7 +27,7 @@ function App() {
         <Route path='/champions-league' element={<Champions />}/>
         <Route path='/europa-league' element={<Europa />}/>
         <Route path='/resultados/:leagueId' element={<Resultados />}/>
-        <Route path="/clasificacion/:leagueId" element={<Clasificacion />} />
+        <Route path="/clasificacion/:leagueSlug" element={<Clasificacion />} />
       </Route>
     </Routes>
   );

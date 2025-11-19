@@ -4,7 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import equiposRoutes from './routes/equiposRoutes.js';
-import partidosRoutes from './routes/partidosRoutes.js';
+// import partidosRoutes from './routes/partidosRoutes.js';
 
 dotenv.config(); // carga las variables del .env
 
@@ -17,7 +17,7 @@ await connectDB();
 
 // Rutas principales
 app.use('/api/equipos', equiposRoutes);
-app.use('/api/partidos', partidosRoutes);
+// app.use('/api/partidos', partidosRoutes);
 
 // Ruta de prueba
 app.get('/', (_req, res) => res.json({ ok: true }));
