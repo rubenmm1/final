@@ -35,7 +35,7 @@ function Home() {
               <Trophy size={20} />
               Ver Competiciones
             </Link>
-            <Link to="/clasificacion/:leagueId" className="home-btn secondary">
+            <Link to="/clasificacion/:leagueSlug" className="home-btn secondary">
               <BarChart2 size={20} />
               Clasificaciones
             </Link>
