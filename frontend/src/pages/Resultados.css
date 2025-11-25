@@ -1,15 +1,16 @@
 .resultados-page {
-  position: relative;
-  top: 60px; /* respeta el header */
-  left: 220px; /* respeta el aside */
-  width: calc(100vw - 220px);
-  height: calc(100vh - 60px);
+  position: absolute;
+  top: 60px;       /* deja espacio al header */
+  left: 220px;     /* deja espacio al aside */
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, #1b1b1b, #3b0000);
   color: white;
   padding: 40px;
+  overflow-y: auto;
   box-sizing: border-box;
-  overflow-y: auto; /* permite hacer scroll si hay muchos partidos */
 }
+
 
 .titulo {
   text-align: center;
